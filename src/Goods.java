@@ -13,7 +13,7 @@ public class Goods {
 	 * @return goodsID
 	 */
 	public int getGoodsID() {
-		return goodsID;
+		return this.goodsID;
 	}
 
 	/**
@@ -27,7 +27,7 @@ public class Goods {
 	 * @return goodsNmae
 	 */
 	public String getGoodsNmae() {
-		return goodsNmae;
+		return this.goodsNmae;
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class Goods {
 	 * @return price
 	 */
 	public int getPrice() {
-		return price;
+		return this.price;
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class Goods {
 	 * @return quantity
 	 */
 	public int getQuantity() {
-		return quantity;
+		return this.quantity;
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class Goods {
 	 * @return makerCode
 	 */
 	public int getMakerCode() {
-		return makerCode;
+		return this.makerCode;
 	}
 
 	/**

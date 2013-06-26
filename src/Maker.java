@@ -12,7 +12,7 @@ public class Maker {
 	 * @return makerCode
 	 */
 	public int getMakerCode() {
-		return makerCode;
+		return this.makerCode;
 	}
 
 	/**
@@ -26,7 +26,7 @@ public class Maker {
 	 * @return makerName
 	 */
 	public String getMakerName() {
-		return makerName;
+		return this.makerName;
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class Maker {
 	 * @return tel
 	 */
 	public String getTel() {
-		return tel;
+		return this.tel;
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class Maker {
 	 * @return address
 	 */
 	public String getAddress() {
-		return address;
+		return this.address;
 	}
 
 	/**
