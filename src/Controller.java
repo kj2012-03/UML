@@ -6,6 +6,9 @@ public class Controller {
 	private ArrayList<String> goodsInfo;
 	private ArrayList<String> makerInfo;
 	
+	private int inputID;
+	private int inputQuantity;
+	
 	private int goodsID;
 	private String goodsName;
 	private int price;
@@ -29,8 +32,14 @@ public class Controller {
 		return goodsInfo;
 	}
 	
+	/**
+	 * “ü‰×¤•i‚Ì¤•i‚h‚c‚Æ”—Ê‚ğ“ü—Í‚·‚éB
+	 * @param goodsID ¤•iƒR[ƒh
+	 * @param quantity “ü‰×”—Ê
+	 */
 	public void input(int goodsID, int quantity) {
-		
+		this.inputID = goodsID;
+		this.inputQuantity = quantity;
 	}
 	
 	public ArrayList<String> recordMaker() {
@@ -39,5 +48,25 @@ public class Controller {
 		makerInfo.add(tel);
 		makerInfo.add(address);
 		return makerInfo;
+	}
+	
+	/**
+	 * “ü‰×‚³‚ê‚½¤•i‚Ì‚h‚c‚ª“o˜^‚³‚ê‚Ä‚¢‚é‚©ŒŸõ‚·‚éB
+	 * @return ŒŸõ‚³‚ê‚½¤•i‚h‚c‚ÌƒŠƒXƒg‚Ì“Y‚¦š
+	 */
+	public int search() {
+		int chk = -99;
+		for (int i = 0; i < goods.size(); i++) {
+			if (inputID == goods.get(i).getGoodsID()) {
+				chk = i;				
+			}
+		}
+		return chk;
+	}
+	
+	public void addGoods(int num) {
+		int stock = goods.get(num).getQuantity();
+		stock += inputQuantity;
+		
 	}
 }

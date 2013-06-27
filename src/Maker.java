@@ -71,12 +71,4 @@ public class Maker {
 		this.address = makerInfo.get(3);
 	}
 	
-	public boolean searchMakerCode(int makerCode) {
-		//メーカー情報から指定されたメーカーコードが存在するかどうかチェックする。
-		if (makerCode == 0) {//メーカーコードが一致した場合
-			return true;
-		} else {//ケーカーコードが不一致だった場合
-			return false;
-		}
-	}
 }
