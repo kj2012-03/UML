@@ -17,7 +17,7 @@ public class Main {
 		System.out.print("“ü‰×‚·‚é¤•i‚Ì”—Ê‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B\n>");
 		int inputQua = Integer.parseInt(stdIn.next());
 		c.input(inputId, inputQua);
-		int chk = c.search();
+		int chk = c.searchGoods();
 		if (chk != -99) {
 			c.addGoods(chk);
 		} else {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Goods {
 
 	private int goodsID;
-	private String goodsNmae;
+	private String goodsName;
 	private int price;
 	private int quantity;
 	private int makerCode;
@@ -26,15 +26,15 @@ public class Goods {
 	/**
 	 * @return goodsNmae
 	 */
-	public String getGoodsNmae() {
-		return this.goodsNmae;
+	public String getGoodsName() {
+		return this.goodsName;
 	}
 
 	/**
 	 * @param goodsNmae セットする goodsNmae
 	 */
-	public void setGoodsNmae(String goodsNmae) {
-		this.goodsNmae = goodsNmae;
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
 	}
 
 	/**
@@ -81,10 +81,18 @@ public class Goods {
 
 	Goods(ArrayList<String> goodsInfo) {
 		this.goodsID = Integer.parseInt(goodsInfo.get(0));
-		this.goodsNmae = goodsInfo.get(1);
+		this.goodsName = goodsInfo.get(1);
 		this.price = Integer.parseInt(goodsInfo.get(2));
 		this.quantity = Integer.parseInt(goodsInfo.get(3));
 		this.makerCode = Integer.parseInt(goodsInfo.get(4));
+	}
+	
+	public void displayGoods() {
+		System.out.println("商品コード：" + getGoodsID() 
+						+ "\n商品名：" + getGoodsName() 
+						+ "\n価格：" + getPrice() 
+						+ "円\n入荷数量：" + getQuantity() 
+						+ "\nメーカーコード：" + getMakerCode());
 	}
 	
 }
