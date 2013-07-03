@@ -22,34 +22,33 @@ public class Controller {
 	private String tel;
 	private String address;
 	
-	Goods newGoods;
-	Maker newMaker;
-	ArrayList<Goods> goods;
-	ArrayList<Maker> maker;
+	private Goods newGoods;
+	private Maker newMaker;
+	private ArrayList<Goods> goods;
+	private ArrayList<Maker> maker;
+	
 	
 	/**
 	 * 未登録の商品を登録する。
 	 * @return 商品のコレクション
 	 */
-	public ArrayList<Goods> recordGoods() {
+	public void recordGoods() {
+		String[] item = {"商品ＩＤ", "商品名", "価格", "入荷量", "メーカーコード"};
 		System.out.print("商品ＩＤ\n>" + inputID);
-		newGoods.setGoodsID(inputID);
+		goodsInfo.add(Integer.toString(inputID));
 		try {
-			System.out.print("商品名\n>");
-			newGoods.setGoodsName(inputMess());
-			System.out.print("価格\n>");
-			newGoods.setPrice(Integer.parseInt(inputMess()));
-			System.out.print("入荷量\n>" + inputQuantity);
-			newGoods.setQuantity(inputQuantity);
-			System.out.print("メーカーコード\n>");
-			makerCode = Integer.parseInt(inputMess());
-			
-			newGoods.setMakerCode(makerCode);
+			for (int i = 1; i < item.length; i++) {
+				System.out.print(item[i] + "\n>");
+				goodsInfo.add(inputMess());
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		newGoods = new Goods(goodsInfo);
+		makerCode = newGoods.getMakerCode();
+		searchMaker();
+		newGoods.displayGoods();
 		goods.add(newGoods);
-		return goods;
 	}
 	
 	/**
@@ -57,30 +56,29 @@ public class Controller {
 	 * @param goodsID 商品コード
 	 * @param quantity 入荷数量
 	 */
-	public void input(int goodsID, int quantity) {
-		this.inputID = goodsID;
-		this.inputQuantity = quantity;
-	}
+//	public void input(int goodsID, int quantity) {
+//		this.inputID = goodsID;
+//		this.inputQuantity = quantity;
+//	}
 	
 	/**
 	 * 未登録のメーカーを登録する。
 	 * @return メーカーのコレクション
 	 */
-	public ArrayList<Maker> recordMaker() {
+	public void recordMaker() {
+		String[] item = {"メーカーコード", "メーカー名", "連絡先", "住所"};
 		System.out.print("メーカーコード\n>" + makerCode);
-		newMaker.setMakerCode(makerCode);
-		System.out.print("メーカー名\n>");
+		makerInfo.add(Integer.toString(makerCode));
 		try {
-			newMaker.setMakerName(inputMess());
-			System.out.print("連絡先\n>");
-			newMaker.setTel(inputMess());
-			System.out.print("住所\n>");
-			newMaker.setAddress(inputMess());
+			for (int i = 1; i < item.length; i++) {
+				System.out.print(item[i] + "\n>");
+				makerInfo.add(inputMess());
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		newMaker = new Maker(makerInfo);
 		maker.add(newMaker);
-		return maker;
 	}
 	
 	/**

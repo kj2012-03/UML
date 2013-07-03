@@ -87,6 +87,9 @@ public class Goods {
 		this.makerCode = Integer.parseInt(goodsInfo.get(4));
 	}
 	
+	/**
+	 * 登録した商品情報を表示する。
+	 */
 	public void displayGoods() {
 		System.out.println("商品コード：" + getGoodsID() 
 						+ "\n商品名：" + getGoodsName() 
