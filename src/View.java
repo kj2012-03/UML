@@ -29,4 +29,8 @@ public class View {
 		return inputQuantity;
 	}
 	
+	public boolean checkNumber(String str) {
+		return true;
+	}
+	
 }
