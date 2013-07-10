@@ -63,16 +63,11 @@ public class Controller {
 	 * @return 商品のコレクション
 	 */
 	public void recordGoods() {
-//		v.goodsDisp();
-		//2週目でうまくGoodsがnewされない
-		ArrayList<String> gl = v.goodsDisp();
-		g = new Goods(gl);
-		System.out.println(this.makerCode);
-		System.out.println(g.getMakerCode());
+		
+		g = new Goods(v.goodsDisp());
 		this.makerCode = g.getMakerCode();
 		searchMaker();
 		goods.add(g);
-//		g = null;
 	}
 	
 	

@@ -18,7 +18,6 @@ public class Main {
 				c.recordGoods();
 			} else {
 				c.addGoods(chk);
-//				continue;
 			}
 			System.out.println("次の伝票を入力しますか？\n(y/n)>");
 			try {
@@ -31,7 +30,6 @@ public class Main {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-//			System.gc();
 		}
 		System.out.println("システムを終了します。");
 		

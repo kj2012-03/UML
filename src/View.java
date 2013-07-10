@@ -6,8 +6,6 @@ import java.util.ArrayList;
 
 public class View {
 
-	private ArrayList<String> goodsInfo;
-	private ArrayList<String> makerInfo;
 
 	private int inputID;
 	private int inputQuantity;
@@ -15,8 +13,6 @@ public class View {
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 	View(){
-		goodsInfo = new ArrayList<String>();
-		makerInfo = new ArrayList<String>();
 	}
 	//商品ID、数量を入力
 	public void firstDisp() {
@@ -57,6 +53,7 @@ public class View {
 
 	//商品入力
 	public ArrayList<String> goodsDisp() {
+		ArrayList<String> goodsInfo = new ArrayList<String>();
 		String[] goods = new String[5];
 		while(true){
 			try {
@@ -123,6 +120,7 @@ public class View {
 
 	//メーカー入力
 	public ArrayList<String> makerDisp() {
+		ArrayList<String> makerInfo = new ArrayList<String>();
 		String[] maker = new String[4];
 		while(true){
 			try {
