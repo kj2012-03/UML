@@ -8,10 +8,13 @@ public class Controller {
 
 	private View v;
 	
-	private int makerCode;
+	private static int makerCode;
 	
 	private ArrayList<Goods> goods;
 	private ArrayList<Maker> maker;
+	
+	private Goods g;
+	private Maker m;
 	
 	Controller() {
 		maker = new ArrayList<Maker>();
@@ -60,11 +63,16 @@ public class Controller {
 	 * @return 商品のコレクション
 	 */
 	public void recordGoods() {
-		v.goodsDisp();
-		Goods g = new Goods(v.goodsDisp());
-		makerCode = g.getMakerCode();
+//		v.goodsDisp();
+		//2週目でうまくGoodsがnewされない
+		ArrayList<String> gl = v.goodsDisp();
+		g = new Goods(gl);
+		System.out.println(this.makerCode);
+		System.out.println(g.getMakerCode());
+		this.makerCode = g.getMakerCode();
 		searchMaker();
 		goods.add(g);
+//		g = null;
 	}
 	
 	
@@ -73,7 +81,7 @@ public class Controller {
 	 * @return メーカーのコレクション
 	 */
 	public void recordMaker() {
-		Maker m = new Maker(v.makerDisp());
+		m = new Maker(v.makerDisp());
 		maker.add(m);
 	}
 	
@@ -86,6 +94,7 @@ public class Controller {
 		int stock = goods.get(num).getQuantity();
 		stock += v.getInputQuantity();
 		goods.get(num).setQuantity(stock);
+		
 	}
 	
 	/**
