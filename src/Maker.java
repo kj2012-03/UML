@@ -71,4 +71,17 @@ public class Maker {
 		this.address = makerInfo.get(3);
 	}
 	
+	/**
+	 * 登録済みメーカー作成用コンストラクタ
+	 * @param code
+	 * @param name
+	 * @param tel
+	 * @param add
+	 */
+	Maker(int code, String name, String tel, String add) {
+		this.makerCode = code;
+		this.makerName = name;
+		this.tel = tel;
+		this.address = add;
+	}
 }

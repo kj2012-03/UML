@@ -14,6 +14,14 @@ public class Controller {
 	private ArrayList<Maker> maker;
 	
 	Controller() {
+		maker = new ArrayList<Maker>();
+		for (int i = 0; i < 10; i++) {
+			maker.add(new Maker(i, "Maker" + i, "000-000-000" + i, "Addres" + i));
+		}
+		goods = new ArrayList<Goods>();
+		for (int i = 0; i < 10; i++) {
+			goods.add(new Goods(i, "Goods" + i, i * 100, i + 10, i));
+		}
 		v = new View();
 	}
 	

@@ -87,5 +87,19 @@ public class Goods {
 		this.makerCode = Integer.parseInt(goodsInfo.get(4));
 	}
 	
-	
+	/**
+	 * 在庫作成用コンストラクタ
+	 * @param id
+	 * @param name
+	 * @param price
+	 * @param qua
+	 * @param code
+	 */
+	Goods(int id, String name, int price, int qua, int code) {
+		this.goodsID = id;
+		this.goodsName = name;
+		this.price = price;
+		this.quantity = qua;
+		this.makerCode = code;
+	}
 }
