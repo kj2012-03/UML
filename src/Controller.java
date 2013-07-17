@@ -3,19 +3,21 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-
 public class Controller {
 
 	private View v;
-	
-	private static int makerCode;
-	
+
+	private int makerCode;
+
 	private ArrayList<Goods> goods;
 	private ArrayList<Maker> maker;
-	
-	private Goods g;
-	private Maker m;
-	
+
+	// private Goods g;
+	// private Maker m;
+
+	/**
+	 * Controllerクラスのコンストラクタ 暫定的に商品とメーカーの登録済みを10件作成する。
+	 */
 	Controller() {
 		maker = new ArrayList<Maker>();
 		for (int i = 0; i < 10; i++) {
@@ -27,9 +29,10 @@ public class Controller {
 		}
 		v = new View();
 	}
-	
+
 	/**
 	 * 入荷された商品のＩＤが登録されているか検索する。
+	 * 
 	 * @return 検索された商品ＩＤのリストの添え字
 	 */
 	public int searchGoods() {
@@ -37,7 +40,7 @@ public class Controller {
 		int chk = -99;
 		for (int i = 0; i < goods.size(); i++) {
 			if (v.getInputID() == goods.get(i).getGoodsID()) {
-				chk = i;				
+				chk = i;
 			}
 		}
 		return chk;
@@ -45,6 +48,7 @@ public class Controller {
 
 	/**
 	 * 入力されたメーカーのコードが登録されているか検索する。
+	 * 
 	 * @return メーカーコード
 	 */
 	public int searchMaker() {
@@ -57,55 +61,58 @@ public class Controller {
 		return makerCode;
 	}
 
-	
 	/**
 	 * 未登録の商品を登録する。
+	 * 
 	 * @return 商品のコレクション
 	 */
 	public void recordGoods() {
-		
-		g = new Goods(v.goodsDisp());
+
+		Goods g = new Goods(v.goodsDisp());
 		this.makerCode = g.getMakerCode();
 		searchMaker();
 		goods.add(g);
 	}
-	
-	
+
 	/**
 	 * 未登録のメーカーを登録する。
+	 * 
 	 * @return メーカーのコレクション
 	 */
 	public void recordMaker() {
-		m = new Maker(v.makerDisp());
+		Maker m = new Maker(v.makerDisp());
 		maker.add(m);
 	}
-	
-	
+
 	/**
 	 * 登録済みの商品に入荷した数量を加算する。
-	 * @param num 入荷した商品の格納されているリストの添え字
+	 * 
+	 * @param num
+	 *            入荷した商品の格納されているリストの添え字
 	 */
 	public void addGoods(int num) {
 		int stock = goods.get(num).getQuantity();
 		stock += v.getInputQuantity();
 		goods.get(num).setQuantity(stock);
-		
+
 	}
-	
+
 	/**
 	 * 文字列を入力する。
+	 * 
 	 * @return 入力された文字列1行
 	 * @throws IOException
 	 */
 	public String inputMess() throws IOException {
 		String s = null;
 		try {
-			BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+			BufferedReader input = new BufferedReader(new InputStreamReader(
+					System.in));
 			s = input.readLine();
 		} catch (IOException e) {
 			throw e;
 		}
 		return s;
 	}
-	
+
 }

@@ -1,13 +1,12 @@
 import java.util.ArrayList;
 
-
 public class Maker {
 
 	private int makerCode;
 	private String makerName;
 	private String tel;
 	private String address;
-	
+
 	/**
 	 * @return makerCode
 	 */
@@ -16,7 +15,8 @@ public class Maker {
 	}
 
 	/**
-	 * @param makerCode セットする makerCode
+	 * @param makerCode
+	 *            セットする makerCode
 	 */
 	public void setMakerCode(int makerCode) {
 		this.makerCode = makerCode;
@@ -30,7 +30,8 @@ public class Maker {
 	}
 
 	/**
-	 * @param makerName セットする makerName
+	 * @param makerName
+	 *            セットする makerName
 	 */
 	public void setMakerName(String makerName) {
 		this.makerName = makerName;
@@ -44,7 +45,8 @@ public class Maker {
 	}
 
 	/**
-	 * @param tel セットする tel
+	 * @param tel
+	 *            セットする tel
 	 */
 	public void setTel(String tel) {
 		this.tel = tel;
@@ -58,25 +60,37 @@ public class Maker {
 	}
 
 	/**
-	 * @param address セットする address
+	 * @param address
+	 *            セットする address
 	 */
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
+	/**
+	 * Makerクラスのコンストラクタ
+	 * 
+	 * @param makerInfo
+	 *            メーカー情報
+	 */
 	Maker(ArrayList<String> makerInfo) {
 		this.makerCode = Integer.parseInt(makerInfo.get(0));
 		this.makerName = makerInfo.get(1);
 		this.tel = makerInfo.get(2);
 		this.address = makerInfo.get(3);
 	}
-	
+
 	/**
 	 * 登録済みメーカー作成用コンストラクタ
+	 * 
 	 * @param code
+	 *            メーカーコード
 	 * @param name
+	 *            メーカー名
 	 * @param tel
+	 *            連絡先
 	 * @param add
+	 *            住所
 	 */
 	Maker(int code, String name, String tel, String add) {
 		this.makerCode = code;

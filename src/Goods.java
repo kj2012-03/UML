@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 public class Goods {
 
 	private int goodsID;
@@ -8,7 +7,7 @@ public class Goods {
 	private int price;
 	private int quantity;
 	private int makerCode;
-	
+
 	/**
 	 * @return goodsID
 	 */
@@ -17,7 +16,8 @@ public class Goods {
 	}
 
 	/**
-	 * @param goodsID セットする goodsID
+	 * @param goodsID
+	 *            セットする goodsID
 	 */
 	public void setGoodsID(int goodsID) {
 		this.goodsID = goodsID;
@@ -31,7 +31,8 @@ public class Goods {
 	}
 
 	/**
-	 * @param goodsNmae セットする goodsNmae
+	 * @param goodsNmae
+	 *            セットする goodsNmae
 	 */
 	public void setGoodsName(String goodsName) {
 		this.goodsName = goodsName;
@@ -45,7 +46,8 @@ public class Goods {
 	}
 
 	/**
-	 * @param price セットする price
+	 * @param price
+	 *            セットする price
 	 */
 	public void setPrice(int price) {
 		this.price = price;
@@ -59,7 +61,8 @@ public class Goods {
 	}
 
 	/**
-	 * @param quantity セットする quantity
+	 * @param quantity
+	 *            セットする quantity
 	 */
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
@@ -73,12 +76,19 @@ public class Goods {
 	}
 
 	/**
-	 * @param makerCode セットする makerCode
+	 * @param makerCode
+	 *            セットする makerCode
 	 */
 	public void setMakerCode(int makerCode) {
 		this.makerCode = makerCode;
 	}
 
+	/**
+	 * Goodsクラスのコンストラクタ
+	 * 
+	 * @param goodsInfo
+	 *            新規商品情報
+	 */
 	Goods(ArrayList<String> goodsInfo) {
 		this.goodsID = Integer.parseInt(goodsInfo.get(0));
 		this.goodsName = goodsInfo.get(1);
@@ -86,14 +96,20 @@ public class Goods {
 		this.quantity = Integer.parseInt(goodsInfo.get(3));
 		this.makerCode = Integer.parseInt(goodsInfo.get(4));
 	}
-	
+
 	/**
 	 * 在庫作成用コンストラクタ
+	 * 
 	 * @param id
+	 *            商品ＩＤ
 	 * @param name
+	 *            商品名
 	 * @param price
+	 *            価格
 	 * @param qua
+	 *            数量
 	 * @param code
+	 *            メーカーコード
 	 */
 	Goods(int id, String name, int price, int qua, int code) {
 		this.goodsID = id;

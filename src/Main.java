@@ -1,7 +1,5 @@
 import java.io.IOException;
 
-
-
 public class Main {
 
 	/**
@@ -10,10 +8,10 @@ public class Main {
 	public static void main(String[] args) {
 
 		Controller c = new Controller();
-		
+
 		while (true) {
 			int chk = c.searchGoods();
-			
+
 			if (chk == -99) {
 				c.recordGoods();
 			} else {
@@ -32,9 +30,7 @@ public class Main {
 			}
 		}
 		System.out.println("システムを終了します。");
-		
-		
-		
+
 	}
 
 }
